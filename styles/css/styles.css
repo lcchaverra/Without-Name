@@ -1,0 +1,256 @@
+@font-face {
+  font-family: 'Product Sans';
+  src: url("/files/ProductSans-Regular.ttf"); }
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+:root {
+  --font: 'Product Sans', sans-serif;
+  --header-height: 3.5rem;
+  --footer-height: 4rem;
+  --bg-color: rgba(207, 207, 207, 0.89);
+  --bg-color2: rgb(255, 255, 255);
+  --primary-color: rgba(255, 112, 16, 0.767);
+  --secundary-color:rgba(230, 102, 16, 0.87);
+  --letter-color: rgb(0, 0, 0);
+  --shadow: 1px 1px 0.4rem rgb(109, 109, 109);
+  font-family: var(--font); }
+
+/* Media Query para adaptar el color al mismo del sistema */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #53575A;
+    --bg-color2: #282D31;
+    --letter-color: #eee;
+    --primary-color: #FF3C32;
+    --font: 'Lato', sans-serif
+        --shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.795); } }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3rem);
+  padding-top: var(--header-height);
+  background-color: var(--bg-color); }
+
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  background-color: var(--bg-color2);
+  box-shadow: var(--shadow);
+  height: var(--header-height); }
+
+.header .logo {
+  display: none;
+  width: 7rem;
+  margin-left: 2rem;
+  margin-top: .2rem; }
+
+.navbar {
+  display: none;
+  margin-left: auto;
+  margin-right: 2rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.navbar a {
+  display: block;
+  text-decoration: none;
+  color: var(--letter-color);
+  margin: .1rem;
+  padding: .5rem 1.4rem;
+  border-radius: 2rem; }
+
+.navbar a:hover {
+  color: var(--bg-color2);
+  background-color: var(--primary-color);
+  padding: .5rem 1.4rem; }
+
+@media screen and (min-width: 900px) {
+  .header .logo {
+    display: flex; }
+  .navbar {
+    display: flex; } }
+
+/* ----------------- Icono de hamburguesa dibujado a css */
+.button {
+  top: 1rem;
+  left: 1rem;
+  width: 2rem;
+  height: 1.45rem;
+  background: var(--bg-color2);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s; }
+
+.button::before, .button::after {
+  content: '';
+  display: block; }
+
+.button::before, .button::after, .line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--letter-color);
+  position: absolute; }
+
+.button::before {
+  top: 0; }
+
+.line {
+  top: 50%;
+  transform: translateY(-50%); }
+
+.button::after {
+  bottom: 0; }
+
+/* Boton en su estado activo */
+.button.active {
+  transform: rotate(180deg); }
+
+.button.active .line {
+  display: none; }
+
+@media screen and (max-width: 900px) {
+  .navbar.active {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 1.5rem; }
+  :root {
+    --header-height: 5.5rem; } }
+
+.button.active::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg); }
+
+.button.active::after {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg); }
+
+@media screen and (min-width: 900px) {
+  .button {
+    display: none; } }
+
+.btn {
+  color: #FFFF;
+  text-decoration: none;
+  padding: .8rem 1.5rem;
+  margin: 1rem;
+  width: 8rem;
+  height: 2.1rem;
+  border-radius: .5rem;
+  border: 2px solid var(--secundary-color);
+  background-color: var(--primary-color); }
+
+.btn:hover {
+  background-color: none;
+  border: var(--secundary-color); }
+
+.wrapper {
+  width: calc(100% - 2rem);
+  margin-left: 1rem;
+  margin-right: 1rem; }
+
+.wrapper h2 {
+  font-size: 4rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+.wrapper p {
+  padding-bottom: 2rem; }
+
+@media screen and (min-width: 900px) {
+  .wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem; } }
+
+.banner-p {
+  color: var(--letter-color);
+  width: 100%;
+  height: 17rem;
+  background: url("/img/imagen principal.jpg") no-repeat center;
+  background-size: cover; }
+
+.banner-p .wrapper p {
+  padding-bottom: 2rem; }
+
+.btn-line {
+  text-align: center; }
+
+.products {
+  color: var(--letter-color);
+  background-color: var(--bg-color2); }
+
+.itemlist {
+  display: flex;
+  gap: 1.2rem;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+@media screen and (min-width: 900px) {
+  .itemlist {
+    flex-direction: row; }
+  .products {
+    height: 27rem; } }
+
+.products-item {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: var(--letter-color);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--bg-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: var(--shadow); }
+
+.products-item-logo {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--secundary-color);
+  border-radius: 100%; }
+
+.products-item-logo img {
+  width: 100%; }
+
+.about-us {
+  color: var(--letter-color);
+  height: 17rem;
+  background: url("/img/imagenes segundarias 1.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.price {
+  color: var(--letter-color);
+  background-color: var(--bg-color2);
+  height: 17rem; }
+
+.contact {
+  color: var(--letter-color);
+  background-color: var(--bg-color2);
+  text-align: center; }
+
+.contact .wrapper iframe {
+  max-width: 100%; }
+
+.footer {
+  color: var(--letter-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+  height: var(--footer-height);
+  background-color: var(--bg-color); }

@@ -1,0 +1,18 @@
+// ---------------------------------------------------------
+.btn {
+    color: #FFFF;
+    text-decoration: none;
+    padding: .8rem 1.5rem;
+    margin: 1rem;
+    width: 8rem;
+    height: 2.1rem;
+    border-radius: .5rem;
+    border: 2px solid var(--secundary-color);
+    background-color: var(--primary-color);
+}
+
+.btn:hover {
+    background-color: none;
+    border: var(--secundary-color);
+}
+// ---------------------------------------------------------

@@ -1,0 +1,28 @@
+// Gestor de Contenido
+
+.wrapper {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.wrapper h2 {
+    font-size: 4rem;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.wrapper p {
+    padding-bottom: 2rem;
+}
+
+@media screen and (min-width:$tablet){
+    .wrapper {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}

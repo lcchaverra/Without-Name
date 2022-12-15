@@ -1,0 +1,46 @@
+// seccion de productos
+.products {
+    color: var(--letter-color);
+    background-color: var(--bg-color2);
+}
+
+.itemlist {
+    display: flex;
+    gap: 1.2rem;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media screen and (min-width:$tablet) {
+    .itemlist {
+        flex-direction: row;
+    }
+    .products{
+        height: 27rem;
+    }
+}
+
+.products-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: var(--letter-color);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--bg-color);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.products-item-logo {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--secundary-color);
+    border-radius: 100%;
+}
+
+.products-item-logo img {
+    width: 100%;
+}

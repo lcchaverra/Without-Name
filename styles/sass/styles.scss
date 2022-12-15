@@ -1,0 +1,56 @@
+@import "font";
+
+// Variables Sass
+$movil: 680px;
+$tablet: 900px;
+$desk: 1024px;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    // Variables Css
+    --font: 'Product Sans', sans-serif;
+    --header-height: 3.5rem;
+    --footer-height: 4rem;
+    --bg-color: rgba(207, 207, 207, 0.89);
+    --bg-color2: rgb(255, 255, 255);
+    --primary-color: rgba(255, 112, 16, 0.767);
+    --secundary-color:rgba(230, 102, 16, 0.87);
+    --letter-color: rgb(0, 0, 0);
+    --shadow: 1px 1px 0.4rem rgb(109, 109, 109);
+    font-family: var(--font);
+}
+
+/* Media Query para adaptar el color al mismo del sistema */
+@media (prefers-color-scheme :dark) {
+    :root {
+        --bg-color    : #53575A;
+        --bg-color2  : #282D31;
+        --letter-color  : #eee;
+        --primary-color: #FF3C32;
+        --font        : 'Lato', sans-serif
+        --shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.795);
+    } 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 3rem);
+    padding-top: var(--header-height);
+    background-color: var(--bg-color);
+}
+
+@import "menu";
+@import "button";
+@import "wrapper";
+@import "banner";
+@import "products";
+@import "about";
+@import "price";
+@import "contact";
+@import "footer";

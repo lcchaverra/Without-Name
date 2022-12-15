@@ -1,0 +1,17 @@
+// ---------------Banner de Inicio
+
+.banner-p {
+    color: var(--letter-color);
+    width: 100%;
+    height: 17rem;
+    background: url('/img/imagen principal.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.banner-p .wrapper p{
+    padding-bottom: 2rem;
+}
+
+.btn-line {
+    text-align: center;
+}
