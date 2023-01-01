@@ -2,11 +2,6 @@
   font-family: 'Product Sans';
   src: url("/files/ProductSans-Regular.ttf"); }
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
 :root {
   --font: 'Product Sans', sans-serif;
   --header-height: 3.5rem;
@@ -19,15 +14,10 @@
   --shadow: 1px 1px 0.4rem rgb(109, 109, 109);
   font-family: var(--font); }
 
-/* Media Query para adaptar el color al mismo del sistema */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #53575A;
-    --bg-color2: #282D31;
-    --letter-color: #eee;
-    --primary-color: #FF3C32;
-    --font: 'Lato', sans-serif
-        --shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.795); } }
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 body {
   display: flex;
@@ -35,6 +25,16 @@ body {
   min-height: calc(100vh - 3rem);
   padding-top: var(--header-height);
   background-color: var(--bg-color); }
+
+/* Media Query para adaptar el color al mismo del sistema */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #53575A;
+    --bg-color2: #282D31;
+    --letter-color: #eee;
+    --primary-color: #FF3C32;
+    --font: 'Roboto', sans-serif
+        --shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.795); } }
 
 .header {
   top: 0;
@@ -66,7 +66,8 @@ body {
   color: var(--letter-color);
   margin: .1rem;
   padding: .5rem 1.4rem;
-  border-radius: 2rem; }
+  border-radius: 2rem;
+  transition: all .2s; }
 
 .navbar a:hover {
   color: var(--bg-color2);
@@ -146,11 +147,16 @@ body {
   height: 2.1rem;
   border-radius: .5rem;
   border: 2px solid var(--secundary-color);
-  background-color: var(--primary-color); }
+  background-color: var(--primary-color);
+  transition: all .2s; }
+
+.ghost {
+  background-color: transparent; }
 
 .btn:hover {
-  background-color: none;
-  border: var(--secundary-color); }
+  background-color: var(--primary-color);
+  border: 3px solid var(--secundary-color);
+  padding: 1rem 1.7rem; }
 
 .wrapper {
   width: calc(100% - 2rem);
@@ -175,7 +181,7 @@ body {
     padding-right: 2rem; } }
 
 .banner-p {
-  color: var(--letter-color);
+  color: #FFFF;
   width: 100%;
   height: 17rem;
   background: url("/img/imagen principal.jpg") no-repeat center;
@@ -226,7 +232,7 @@ body {
   width: 100%; }
 
 .about-us {
-  color: var(--letter-color);
+  color: #FFFF;
   height: 17rem;
   background: url("/img/imagenes segundarias 1.jpg") no-repeat center;
   background-size: cover;
@@ -243,7 +249,8 @@ body {
   text-align: center; }
 
 .contact .wrapper iframe {
-  max-width: 100%; }
+  max-width: 100%;
+  padding-bottom: 1rem; }
 
 .footer {
   color: var(--letter-color);

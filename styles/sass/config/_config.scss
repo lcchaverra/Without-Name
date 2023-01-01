@@ -1,0 +1,18 @@
+//Reinicio de Los Estilos
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+%body {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 3rem);
+    padding-top: var(--header-height);
+    background-color: var(--bg-color);
+}
+
+body {
+    @extend %body;
+}

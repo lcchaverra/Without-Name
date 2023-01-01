@@ -1,56 +1,43 @@
-@import "font";
+//Hoja de Estilos Principal------------------------
 
-// Variables Sass
-$movil: 680px;
-$tablet: 900px;
-$desk: 1024px;
+// Fuentes del Proyecto
+@import "components/font";
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// Variables del Proyecto
+@import "config/variables";
 
-:root {
-    // Variables Css
-    --font: 'Product Sans', sans-serif;
-    --header-height: 3.5rem;
-    --footer-height: 4rem;
-    --bg-color: rgba(207, 207, 207, 0.89);
-    --bg-color2: rgb(255, 255, 255);
-    --primary-color: rgba(255, 112, 16, 0.767);
-    --secundary-color:rgba(230, 102, 16, 0.87);
-    --letter-color: rgb(0, 0, 0);
-    --shadow: 1px 1px 0.4rem rgb(109, 109, 109);
-    font-family: var(--font);
-}
+//Configuraciones Basicas (body)
+@import "config/config";
 
-/* Media Query para adaptar el color al mismo del sistema */
-@media (prefers-color-scheme :dark) {
-    :root {
-        --bg-color    : #53575A;
-        --bg-color2  : #282D31;
-        --letter-color  : #eee;
-        --primary-color: #FF3C32;
-        --font        : 'Lato', sans-serif
-        --shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.795);
-    } 
-}
+// Tema Oscuro Automatico
+@import "config/darktheme";
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 3rem);
-    padding-top: var(--header-height);
-    background-color: var(--bg-color);
-}
+//Mixing de Animaciones
+@import "mixins/mixins";
 
-@import "menu";
-@import "button";
-@import "wrapper";
-@import "banner";
-@import "products";
-@import "about";
-@import "price";
-@import "contact";
-@import "footer";
+// Estilos del Menu
+@import "components/menu";
+
+// Estilos para los botones
+@import "components/button";
+
+// Estilos para flujo de Contenido
+@import "components/wrapper";
+
+// Estilos para Banner de inicio
+@import "components/banner";
+
+// Estilos para Presentacion de Productos
+@import "components/products";
+
+// Estilos de seccion sobre nosotros
+@import "components/about";
+
+// Estilos para Los precios
+@import "components/price";
+
+// Estilos para Seccion de Contactos
+@import "components/contact";
+
+// Estilos para el Footer
+@import "components/footer";
