@@ -2,11 +2,11 @@
 .btn {
     color: #FFFF;
     text-decoration: none;
-    padding: .8rem 1.5rem;
+    padding: .8em 1.5em;
     margin: 1rem;
-    width: 8rem;
+    width: 9em;
     height: 2.1rem;
-    border-radius: .5rem;
+    border-radius: 1.2em;
     border: 2px solid var(--secundary-color);
     background-color: var(--primary-color);
     transition: all .2s;
@@ -14,6 +14,7 @@
 
 .ghost {
     background-color: transparent;
+    color: var(--letter-color);
 }
 
 .btn:hover {
